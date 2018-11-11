@@ -15,7 +15,7 @@ find ./tests/samples -type f -name '*.in' \
     answerFile="${file%.*}"
     it "succeeds with the correct answer" && {
       WITH_SNAPSHOT="${answerFile}.ans" \
-      expect_run ${SUCCESSFULLY} "$exe"
+      expect_run ${SUCCESSFULLY} "$exe" < "$file"
     }
   )
 done
